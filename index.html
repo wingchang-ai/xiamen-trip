@@ -1,62 +1,103 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>廈門舒壓之旅 4D3N</title>
-    <style>
-        :root { --p: #4A423C; --s: #D7C4B7; --a: #E67E22; --bg: #F9F7F5; }
-        body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--p); margin: 0; line-height: 1.6; }
-        header { background: var(--p); color: var(--s); text-align: center; padding: 25px 15px; }
-        .container { max-width: 500px; margin: auto; padding: 20px; }
-        .hotel { background: var(--s); color: white; padding: 10px; border-radius: 8px; text-align: center; margin-bottom: 20px; font-weight: bold; }
-        .card { background: white; border-radius: 12px; padding: 18px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--s); }
-        h2 { margin-top: 0; color: var(--p); border-bottom: 1px solid #eee; padding-bottom: 8px; }
-        .item { margin-bottom: 12px; }
-        .time { color: var(--a); font-weight: bold; font-size: 0.9rem; }
-        .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-left: 5px; color: white; }
-        .t-food { background: #d35400; }
-        .t-relax { background: #27ae60; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; }
-        th, td { padding: 10px; border: 1px solid #eee; text-align: left; }
-        th { background: #f2ede9; }
-        .total { text-align: right; font-size: 1.3rem; font-weight: bold; color: var(--a); padding: 15px 0; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>廈門舒壓之旅 4D3N｜旅遊行程分享頁</title>
+  <meta name="theme-color" content="#4A423C">
+  <style>
+    :root{--primary:#4A423C;--secondary:#D7C4B7;--accent:#E67E22;--bg:#F7F4F1;--card:#fff;--text:#2F2925;--muted:#7A7169;--line:#EAE3DD;--shadow:0 10px 24px rgba(60,44,32,.08)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;color:var(--text);background:linear-gradient(180deg,#FBF9F7 0%,var(--bg) 100%);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .hero{padding:44px 18px 28px;background:linear-gradient(135deg,rgba(74,66,60,.96),rgba(74,66,60,.86));color:#fff}
+    .wrap{max-width:980px;margin:0 auto}.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:end}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.12);font-size:.9rem;font-weight:700;margin-bottom:12px}
+    h1{margin:0 0 10px;font-size:clamp(2rem,5vw,3.2rem);line-height:1.1}.sub{margin:0;color:rgba(255,255,255,.88);font-size:1.02rem}
+    .hero-card{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.15);border-radius:22px;padding:16px}
+    .hero-card .stat{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:.95rem}.hero-card .stat:last-child{border-bottom:0}
+    .toolbar{position:sticky;top:0;z-index:30;background:rgba(247,244,241,.92);border-bottom:1px solid var(--line)}
+    .toolbar-inner{max-width:980px;margin:0 auto;padding:10px 14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+    .nav-links,.actions{display:flex;gap:8px;flex-wrap:wrap}
+    .nav-links a,.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--text);font-weight:700;cursor:pointer}
+    .btn.primary{background:var(--primary);color:#fff;border-color:transparent}
+    .main{max-width:980px;margin:0 auto;padding:22px 14px 48px}.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--muted);font-weight:700}
+    .section{margin-top:24px}.section h2{margin:0;font-size:1.4rem}.lead{margin:6px 0 0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column:span 12;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+    .pad{padding:18px}.span-5{grid-column:span 5}.span-6{grid-column:span 6}.span-7{grid-column:span 7}
+    .checklist{display:grid;gap:10px;margin:0;padding:0;list-style:none}.checklist li{display:flex;gap:10px;align-items:start;padding:10px 12px;border-radius:14px;background:#FCFAF8;border:1px solid #F1EBE4}
+    .dot{width:24px;height:24px;border-radius:50%;background:#EFE6DE;color:var(--primary);display:inline-flex;align-items:center;justify-content:center;font-weight:900;flex:0 0 auto}
+    .meta-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}.meta-list li{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px dashed var(--line)}.meta-list li:last-child{border-bottom:0}
+    .timeline{display:grid;gap:16px}.day-card{padding:18px;border-left:6px solid var(--secondary)}.day-top{display:flex;justify-content:space-between;align-items:start;gap:10px;margin-bottom:8px}
+    .day-title{margin:0;font-size:1.15rem;font-weight:900}.day-sub{color:var(--muted);font-size:.95rem;margin-top:3px}.badge{display:inline-flex;align-items:center;padding:7px 10px;border-radius:999px;font-size:.8rem;font-weight:900;background:#F7F1EA;color:var(--primary)}
+    .items{display:grid;gap:10px;margin-top:12px}.item{display:grid;grid-template-columns:86px 1fr;gap:12px;align-items:start;padding:12px;border-radius:14px;background:#FCFAF8;border:1px solid #F1EBE4}
+    .time{color:var(--accent);font-weight:900}.tag{display:inline-flex;align-items:center;padding:4px 9px;border-radius:999px;font-size:.76rem;font-weight:900;margin-right:6px;margin-bottom:6px;color:#fff}.food{background:#D97116}.relax{background:#2E9E68}.walk{background:#4687FF}
+    table{width:100%;border-collapse:collapse;margin-top:8px} th,td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top} th{background:#F7F1EA;font-size:.92rem}
+    .total{text-align:right;font-size:1.45rem;font-weight:1000;color:var(--accent);margin-top:12px}.muted{color:var(--muted)}.footer{margin-top:28px;padding:24px 0 8px;text-align:center;color:var(--muted);font-size:.92rem}
+    .toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:rgba(47,41,37,.94);color:#fff;padding:11px 14px;border-radius:999px;font-weight:800;font-size:.92rem;display:none;z-index:40}
+    @media (max-width:860px){.hero-grid{grid-template-columns:1fr}.span-5,.span-6,.span-7{grid-column:span 12}}
+    @media (max-width:680px){.item{grid-template-columns:1fr}.nav-links,.actions{width:100%}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.nav-links a,.btn{width:100%}}
+    @media print{.toolbar,.toast{display:none!important}body{background:#fff}.card{box-shadow:none}}
+  </style>
 </head>
 <body>
-<header>
-    <h1>廈門舒壓之旅 4D3N</h1>
-    <p>2026/04/24 - 04/27</p>
-</header>
-<div class="container">
-    <div class="hotel">📍 住宿：全季酒店 (廈門中山路店)</div>
-    <div class="card">
-        <h2>Day 1: 4/24 (五)</h2>
-        <div class="item"><span class="time">13:00</span> 飯店 Check-in</div>
-        <div class="item"><span class="time">14:30</span> <span class="tag t-food">美食</span> 灌頂薑母鴨 (午餐)</div>
-        <div class="item"><span class="time">20:00</span> <span class="tag t-relax">按摩</span> 鄭遠元專業修腳 (預算¥79)</div>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">✈️ 旅遊行程分享頁 ・ 適合手機轉傳</div>
+        <h1>廈門舒壓之旅 4D3N</h1>
+        <p class="sub">2026/04/24（五）－ 04/27（一）｜白天散步、美食踩點，晚上按摩放鬆</p>
+      </div>
+      <div class="hero-card">
+        <div class="stat"><span>📍 住宿</span><strong>全季酒店（廈門中山路店）</strong></div>
+        <div class="stat"><span>💆 按摩預算</span><strong>¥120 / 次</strong></div>
+        <div class="stat"><span>👤 建議模式</span><strong>單人慢旅 / 雙人同行皆可</strong></div>
+        <div class="stat"><span>📱 分享方式</span><strong>單檔 HTML / 可部署靜態頁</strong></div>
+      </div>
     </div>
-    <div class="card">
-        <h2>Day 2: 4/25 (六)</h2>
-        <div class="item"><span class="time">09:00</span> 鼓浪嶼漫步 (日光岩、菽莊花園)</div>
-        <div class="item"><span class="time">18:00</span> <span class="tag t-food">美食</span> 八市海鮮市場 + 手撕雞</div>
-        <div class="item"><span class="time">20:30</span> <span class="tag t-relax">按摩</span> 貴足足浴 (預算¥98)</div>
+  </header>
+  <div class="toolbar">
+    <div class="toolbar-inner">
+      <div class="nav-links">
+        <a href="#overview">總覽</a><a href="#itinerary">每日行程</a><a href="#budget">預算</a><a href="#packing">行前清單</a>
+      </div>
+      <div class="actions">
+        <button class="btn primary" onclick="sharePage()">一鍵分享</button>
+        <button class="btn" onclick="copyLink()">複製連結</button>
+        <button class="btn" onclick="downloadIcs()">加入行事曆</button>
+        <button class="btn" onclick="window.print()">列印 / PDF</button>
+      </div>
     </div>
-    <div class="card">
-        <h2>Day 3: 4/26 (日)</h2>
-        <div class="item"><span class="time">10:00</span> 南普陀寺 & 環島路單車</div>
-        <div class="item"><span class="time">18:00</span> <span class="tag t-food">美食</span> 好德來薑母鴨 (晚餐)</div>
-        <div class="item"><span class="time">20:30</span> <span class="tag t-relax">按摩</span> 至尊足療養生 (預算¥118)</div>
-    </div>
-    <h2>💰 預算明細 (TWD)</h2>
-    <table>
-        <tr><th>項目</th><th>預計花費</th></tr>
-        <tr><td>🏠 全季酒店 (3晚單人)</td><td>$4,950</td></tr>
-        <tr><td>💆 按摩 (3次合計)</td><td>$1,350</td></tr>
-        <tr><td>🍲 美食預算</td><td>$2,800</td></tr>
-        <tr><td>🚢 交通與門票</td><td>$6,500</td></tr>
-    </table>
-    <div class="total">預計合計：NT$ 15,600</div>
-</div>
+  </div>
+  <main class="main">
+    <section id="overview" class="section">
+      <div class="chips"><div class="chip">🏨 中山路住宿圈</div><div class="chip">🚶 鼓浪嶼・南普陀・環島路</div><div class="chip">🍲 薑母鴨・八市海鮮</div><div class="chip">💆 3 晚按摩放鬆</div></div>
+      <div class="grid">
+        <div class="card pad span-7"><h2>這趟旅程適合什麼人？</h2><p class="lead">適合想把行程排得剛剛好、不趕景點、又想兼顧美食與舒壓的人。</p><ul class="checklist"><li><span class="dot">1</span><div><strong>節奏輕鬆</strong><br><span class="muted">每天重點 2～3 個，不走爆量景點路線。</span></div></li><li><span class="dot">2</span><div><strong>手機友善</strong><br><span class="muted">卡片式排版，適合直接丟群組、Line、Email 轉傳。</span></div></li><li><span class="dot">3</span><div><strong>可延伸上線</strong><br><span class="muted">把這個 HTML 丟到 GitHub Pages / Netlify / Vercel，就能變成公開網址。</span></div></li></ul></div>
+        <div class="card pad span-5"><h2>旅程摘要</h2><ul class="meta-list"><li><span class="muted">入住日期</span><strong>2026/04/24（五）</strong></li><li><span class="muted">退房日期</span><strong>2026/04/27（一）</strong></li><li><span class="muted">住宿</span><strong>全季酒店（廈門中山路店）</strong></li><li><span class="muted">按摩次數</span><strong>3 次</strong></li><li><span class="muted">按摩總額</span><strong>¥360</strong></li><li><span class="muted">預估總額</span><strong>NT$ 15,910</strong></li></ul></div>
+      </div>
+    </section>
+    <section id="itinerary" class="section">
+      <h2>每日行程</h2><p class="lead">白天安排景點與美食，晚上保留按摩舒壓時段。</p>
+      <div class="timeline">
+        <div class="card day-card"><div class="day-top"><div><h3 class="day-title">Day 1｜4/24（五）</h3><div class="day-sub">抵達、入住、第一晚放鬆</div></div><div class="badge">入住日</div></div><div class="items"><div class="item"><div class="time">13:00</div><div><strong>飯店 Check-in</strong><br><span class="muted">放行李、休息一下，熟悉中山路周邊動線。</span></div></div><div class="item"><div class="time">14:30</div><div><span class="tag food">美食</span><strong>灌頂薑母鴨（午餐）</strong><br><span class="muted">第一餐排暖胃路線，適合旅途後補充體力。</span></div></div><div class="item"><div class="time">20:00</div><div><span class="tag relax">按摩</span><strong>鄭遠元專業修腳</strong><br><span class="muted">預算 ¥120，作為第一晚舒壓收尾。</span></div></div></div></div>
+        <div class="card day-card"><div class="day-top"><div><h3 class="day-title">Day 2｜4/25（六）</h3><div class="day-sub">鼓浪嶼散步、八市海鮮、足浴</div></div><div class="badge">景點主日</div></div><div class="items"><div class="item"><div class="time">09:00</div><div><span class="tag walk">散步</span><strong>鼓浪嶼漫步</strong><br><span class="muted">日光岩、菽莊花園，建議以拍照與慢走為主。</span></div></div><div class="item"><div class="time">18:00</div><div><span class="tag food">美食</span><strong>八市海鮮市場 + 手撕雞</strong><br><span class="muted">晚上回到市區吃熱鬧一點。</span></div></div><div class="item"><div class="time">20:30</div><div><span class="tag relax">按摩</span><strong>貴足足浴</strong><br><span class="muted">預算 ¥120，第二晚安排足浴。</span></div></div></div></div>
+        <div class="card day-card"><div class="day-top"><div><h3 class="day-title">Day 3｜4/26（日）</h3><div class="day-sub">南普陀、環島路、最後一晚按摩</div></div><div class="badge">舒壓主日</div></div><div class="items"><div class="item"><div class="time">10:00</div><div><span class="tag walk">散步</span><strong>南普陀寺 & 環島路單車</strong><br><span class="muted">寺院慢走＋海岸線騎行，體感會很舒服。</span></div></div><div class="item"><div class="time">18:00</div><div><span class="tag food">美食</span><strong>好德來薑母鴨（晚餐）</strong><br><span class="muted">安排作為旅程尾聲的溫補晚餐。</span></div></div><div class="item"><div class="time">20:30</div><div><span class="tag relax">按摩</span><strong>至尊足療養生</strong><br><span class="muted">預算 ¥120，回程前好好放鬆。</span></div></div></div></div>
+        <div class="card day-card"><div class="day-top"><div><h3 class="day-title">Day 4｜4/27（一）</h3><div class="day-sub">收尾、退房、返程</div></div><div class="badge">返程日</div></div><div class="items"><div class="item"><div class="time">09:30</div><div><strong>飯店早餐 / 附近散步</strong><br><span class="muted">保留彈性，不再塞新景點。</span></div></div><div class="item"><div class="time">11:00</div><div><strong>Check-out</strong><br><span class="muted">整理行李、確認證件、交通與返程時間。</span></div></div><div class="item"><div class="time">返程前</div><div><strong>伴手禮 / 咖啡小休</strong><br><span class="muted">可視車船班時間追加。</span></div></div></div></div>
+      </div>
+    </section>
+    <section id="budget" class="section"><div class="grid"><div class="card pad span-7"><h2>預算總表</h2><p class="lead">目前按摩預算已調整為每次 ¥120，共 3 次。</p><table><thead><tr><th>項目</th><th>預計花費（TWD）</th><th>說明</th></tr></thead><tbody><tr><td>🏠 全季酒店（3 晚單人）</td><td>4,950</td><td>維持原估算</td></tr><tr><td>💆 按摩（¥120 × 3）</td><td>1,660</td><td>合計 ¥360，台幣粗估</td></tr><tr><td>🍲 美食預算</td><td>2,800</td><td>兩餐重點安排 + 零食飲料</td></tr><tr><td>🚢 交通與門票</td><td>6,500</td><td>船票 / 景點 / 市區交通</td></tr></tbody></table><div class="total">預計合計：NT$ 15,910</div></div><div class="card pad span-5"><h2>分享頁功能</h2><ul class="checklist"><li><span class="dot">✓</span><div><strong>一鍵分享</strong><br><span class="muted">支援行動裝置分享面板。</span></div></li><li><span class="dot">✓</span><div><strong>複製連結</strong><br><span class="muted">部署到網站後，適合直接貼到群組。</span></div></li><li><span class="dot">✓</span><div><strong>加入行事曆</strong><br><span class="muted">可下載 .ics 行程事件。</span></div></li><li><span class="dot">✓</span><div><strong>列印 / PDF</strong><br><span class="muted">方便存檔或寄給同行者。</span></div></li><li><span class="dot">!</span><div><strong>資安提醒</strong><br><span class="muted">公開分享時，避免放入訂位代碼、護照資訊、信用卡資料。</span></div></li></ul></div></div></section>
+    <section id="packing" class="section"><div class="grid"><div class="card pad span-6"><h2>行前清單</h2><ul class="checklist"><li><span class="dot">1</span><div><strong>證件確認</strong><br><span class="muted">通行證、身分證件、訂房資訊先截圖備份。</span></div></li><li><span class="dot">2</span><div><strong>支付準備</strong><br><span class="muted">現金與電子支付並備，避免單一方式失效。</span></div></li><li><span class="dot">3</span><div><strong>舒適穿搭</strong><br><span class="muted">鼓浪嶼與環島路以好走鞋為主。</span></div></li><li><span class="dot">4</span><div><strong>按摩前後補水</strong><br><span class="muted">連續步行後安排按摩，記得補充水分。</span></div></li></ul></div><div class="card pad span-6"><h2>上線方式</h2><ul class="checklist"><li><span class="dot">A</span><div><strong>GitHub Pages</strong><br><span class="muted">把 index.html 放進 repo 根目錄後開啟 Pages。</span></div></li><li><span class="dot">B</span><div><strong>Netlify / Vercel</strong><br><span class="muted">直接拖曳整個資料夾即可生成公開網址。</span></div></li><li><span class="dot">C</span><div><strong>本機使用</strong><br><span class="muted">直接雙擊 HTML 也能看，但分享與連結功能以上線版最佳。</span></div></li></ul></div></div></section>
+    <div class="footer">這是一個單檔 HTML 旅遊行程分享頁，可直接下載、轉傳與部署。</div>
+  </main>
+  <div class="toast" id="toast"></div>
+  <script>
+    function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display='none',1800)}
+    async function copyLink(){try{await navigator.clipboard.writeText(location.href);showToast('已複製連結')}catch(e){const ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('已複製連結')}}
+    async function sharePage(){const payload={title:document.title,text:'廈門舒壓之旅 4D3N 行程分享頁',url:location.href};if(navigator.share){try{await navigator.share(payload)}catch(e){}}else{copyLink()}}
+    function downloadIcs(){const dtStamp=new Date().toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Xiamen Trip//ZH-TW//EN','CALSCALE:GREGORIAN','BEGIN:VEVENT','UID:xiamen-trip-20260424@example.com','DTSTAMP:'+dtStamp,'DTSTART;VALUE=DATE:20260424','DTEND;VALUE=DATE:20260428','SUMMARY:廈門舒壓之旅 4D3N','DESCRIPTION:住宿：全季酒店（廈門中山路店）｜按摩每次¥120，共3次','END:VEVENT','END:VCALENDAR'].join('\n');const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});const link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download='xiamen_trip_4d3n.ics';document.body.appendChild(link);link.click();document.body.removeChild(link);showToast('已下載行事曆檔')}
+  </script>
 </body>
 </html>
